@@ -288,7 +288,7 @@ export default function HomeNew() {
 
             {/* ================= DASHBOARD PHASE CONTENT ================= */}
             <motion.div
-                className="absolute inset-0 z-10 flex flex-col justify-between p-4 md:p-8 overflow-y-auto no-scrollbar"
+                className="absolute inset-0 z-10 flex flex-col justify-between p-4 md:p-8 pb-24 md:pb-28 overflow-y-auto no-scrollbar"
                 initial={{ opacity: 0 }}
                 animate={{
                     opacity: phase === 'dashboard' ? 1 : 0,
