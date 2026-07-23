@@ -4,12 +4,13 @@ import { useNavigate } from 'react-router-dom';
 // Assets & Components
 import bgImage from '../../assets/Project_Details/bg-image.png';
 import ProjectBottomNav from '../../Components/Project details/ProjectBottomNav';
+import placeholderImg from '../../assets/Project_Details/placeholder-gray.svg';
 
-// Static Data (Replaces Backend API for now)
+// Static Data (Replaces Backend API for now) — local placeholder so the page works offline
 const staticData = [
-  { title: 'Lower Zone', url: 'https://placehold.co/1280x720/4a4a4a/FFFFFF?text=Gray+Image+1' },
-  { title: 'Mid Zone', url: 'https://placehold.co/1280x720/6b6b6b/FFFFFF?text=Gray+Image+2' },
-  { title: 'Upper Zone', url: 'https://placehold.co/1280x720/8c8c8c/FFFFFF?text=Gray+Image+3' },
+  { title: 'Lower Zone', url: placeholderImg },
+  { title: 'Mid Zone', url: placeholderImg },
+  { title: 'Upper Zone', url: placeholderImg },
 ];
 
 const Mobility: React.FC = () => {

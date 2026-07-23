@@ -31,7 +31,7 @@ export default defineConfig({
         // runtime (see runtimeCaching below) and prefetched in the background
         // by src/pwa/prefetchMedia.ts after first load.
         globPatterns: [
-          '**/*.{js,css,html,ico,svg,woff,woff2}',
+          '**/*.{js,mjs,wasm,css,html,ico,svg,woff,woff2}',
           '**/*.{png,jpg,jpeg,webp}',
           '**/*.pdf',
         ],

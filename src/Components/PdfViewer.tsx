@@ -1,8 +1,9 @@
 import { useState, useEffect } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
+// Bundle the pdf.js worker locally so PDFs load offline (no CDN dependency)
+import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
 
-// Use a secure CDN worker matching react-pdf's internal pdfjs version
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+pdfjs.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
 // 1. Define types for the component props
 interface PdfViewerProps {

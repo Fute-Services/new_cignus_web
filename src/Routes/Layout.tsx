@@ -1,7 +1,10 @@
+import { lazy, Suspense } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import LeftNavbar from "../Components/Navbar/LeftNavbar";
-import Vr from "../Pages/VR/Vr";
-import Amenities from "../Pages/Amenities/Amenities";
+
+// Lazy-load heavy pages so they stay in their own chunks
+const Vr = lazy(() => import("../Pages/VR/Vr"));
+const Amenities = lazy(() => import("../Pages/Amenities/Amenities"));
 
 // --- 1. Standard Layout (WITH Left Navbar) ---
 const Layout = () => {
@@ -17,9 +20,11 @@ const Layout = () => {
 
       {/* Main Content Area */}
       <div className="w-full h-full pointer-events-auto">
-        {location.pathname === "/vr" && <Vr />}
-        {location.pathname === "/amenities" && <Amenities />}
-        {location.pathname !== "/vr" && location.pathname !== "/amenities" && <Outlet />}
+        <Suspense fallback={null}>
+          {location.pathname === "/vr" && <Vr />}
+          {location.pathname === "/amenities" && <Amenities />}
+          {location.pathname !== "/vr" && location.pathname !== "/amenities" && <Outlet />}
+        </Suspense>
       </div>
 
     </div>

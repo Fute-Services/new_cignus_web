@@ -144,8 +144,10 @@ import React, { useState, useEffect } from "react";
 import WithBackButton from "../Navbar/WithBackButton";
 import { Document, Page, pdfjs } from "react-pdf";
 import {motion} from 'framer-motion'
-// Ensure the PDFJS worker is configured correctly via CDN
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
+// Bundle the pdf.js worker locally so PDFs load offline (no CDN dependency)
+import pdfWorkerUrl from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+
+pdfjs.GlobalWorkerOptions.workerSrc = pdfWorkerUrl;
 
 const Brochure: React.FC = () => {
   // const navigate = useNavigate();

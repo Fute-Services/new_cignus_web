@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 // Assets & Components
 import bgImage from '../../assets/Project_Details/bg-image.png';
 import ProjectBottomNav from '../../Components/Project details/ProjectBottomNav';
+import placeholderImg from '../../assets/Project_Details/placeholder-gray.svg';
 
 // Interface
 interface Transport {
@@ -12,12 +13,13 @@ interface Transport {
   video: string;
 }
 
-// Static Placeholder Data (Replaces the API call)
+// Static Placeholder Data (Replaces the API call) — no video yet, so a local
+// placeholder image is shown instead (works offline, unlike an external URL)
 const staticData: Transport[] = [
-  { _id: '1', label: 'VT STRATEGY SECTION 01', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-  { _id: '2', label: 'VT STRATEGY SECTION 02', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-  { _id: '3', label: 'T1 & T2 VT STRATEGY', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
-  { _id: '4', label: 'T2 – VT STRATEGY', video: 'https://www.w3schools.com/html/mov_bbb.mp4' },
+  { _id: '1', label: 'VT STRATEGY SECTION 01', video: '' },
+  { _id: '2', label: 'VT STRATEGY SECTION 02', video: '' },
+  { _id: '3', label: 'T1 & T2 VT STRATEGY', video: '' },
+  { _id: '4', label: 'T2 – VT STRATEGY', video: '' },
 ];
 
 const VerticalTransport: React.FC = () => {
@@ -94,17 +96,21 @@ const VerticalTransport: React.FC = () => {
           className="h-[80vh] flex items-center justify-center"
         >
           <div className="w-[65%] h-[90%] rounded-[20px] overflow-hidden border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-black pointer-events-auto">
-            <video
-              ref={videoRef}
-              key={activeSection?._id}
-              className="w-full h-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-            >
-              <source src={activeSection.video} type="video/mp4" />
-            </video>
+            {activeSection.video ? (
+              <video
+                ref={videoRef}
+                key={activeSection?._id}
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src={activeSection.video} type="video/mp4" />
+              </video>
+            ) : (
+              <img src={placeholderImg} alt={activeSection.label} className="w-full h-full object-cover" />
+            )}
           </div>
         </div>
 
@@ -138,17 +144,21 @@ const VerticalTransport: React.FC = () => {
           style={{ transition: 'opacity 0.3s ease', opacity: animating ? 0 : 1 }}
         >
           <div className="w-full h-auto max-h-[50vh] rounded-[20px] overflow-hidden border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] bg-black pointer-events-auto flex items-center justify-center">
-            <video
-              ref={videoRef}
-              key={activeSection._id}
-              className="w-full h-full object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-            >
-              <source src={activeSection.video} type="video/mp4" />
-            </video>
+            {activeSection.video ? (
+              <video
+                ref={videoRef}
+                key={activeSection._id}
+                className="w-full h-full object-cover"
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                <source src={activeSection.video} type="video/mp4" />
+              </video>
+            ) : (
+              <img src={placeholderImg} alt={activeSection.label} className="w-full h-full object-cover" />
+            )}
           </div>
         </div>
 

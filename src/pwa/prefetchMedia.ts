@@ -42,6 +42,11 @@ async function warmVideoCache(): Promise<void> {
   for (const url of videoUrls) {
     if (!navigator.onLine) return
     try {
+      // Already cached on a previous visit? Skip — don't re-download it.
+      if ('caches' in window) {
+        const cached = await caches.match(url, { ignoreSearch: true, ignoreVary: true })
+        if (cached) continue
+      }
       // Full (non-range) request → 200 response → cached by the SW
       await fetch(url, { cache: 'no-store' })
     } catch {

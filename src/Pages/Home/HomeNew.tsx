@@ -1,7 +1,8 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, lazy, Suspense } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import PdfViewer from "../../Components/PdfViewer";
+// Lazy-load the PDF viewer so the heavy pdf.js library doesn't slow down first paint
+const PdfViewer = lazy(() => import("../../Components/PdfViewer"));
 
 
 // Asset imports
@@ -665,7 +666,17 @@ export default function HomeNew() {
                             {/* PDF Content */}
                             {/* PDF Content Wrapper */}
                             <div className="flex-1 min-h-0 bg-[#071d33] overflow-hidden relative">
-                                <PdfViewer selectedPdf={selectedPdf} />
+                                <Suspense
+                                    fallback={
+                                        <div className="flex justify-center items-center py-10">
+                                            <p className="text-white text-sm tracking-wide animate-pulse">
+                                                Loading PDF layers...
+                                            </p>
+                                        </div>
+                                    }
+                                >
+                                    <PdfViewer selectedPdf={selectedPdf} />
+                                </Suspense>
                             </div>
                         </motion.div>
                     </motion.div>
