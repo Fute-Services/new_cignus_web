@@ -400,7 +400,7 @@ export default function HomeNew() {
                             //     background: 'linear-gradient(179deg, rgba(255, 255, 255, 0.79) 8.41%, #75BFFF 52.84%)',
                             // }}
                             // className="flex flex-col shrink-0 w-[200px] h-[240px] md:w-[220px] md:h-[260px] lg:w-[240px] lg:h-[280px] rounded-3xl overflow-hidden group backdrop-blur-md relative cursor-pointer border border-white/20 shadow-lg"
-                            className="flex flex-col shrink-0 w-[210px] h-[280px] md:w-[230px] md:h-[310px] lg:w-full lg:min-w-0 lg:h-[300px] xl:h-[315px] 2xl:h-[340px] rounded-3xl overflow-hidden group backdrop-blur-md relative cursor-pointer border border-white/20 shadow-lg"
+                            className="flex flex-col shrink-0 w-[210px] h-[280px] md:w-[230px] md:h-[310px] lg:w-full lg:min-w-0 lg:h-[min(300px,46vh)] xl:h-[min(315px,46vh)] 2xl:h-[min(340px,48vh)] rounded-3xl overflow-hidden group backdrop-blur-md relative cursor-pointer border border-white/20 shadow-lg"
                             style={{
                                 background: 'rgba(255, 255, 255, 0.85)',
                             }}
@@ -418,7 +418,7 @@ export default function HomeNew() {
                             />
 
                             <div
-                                className="relative w-full h-[70px]  md:h-[90px] lg:h-[125px] 2xl:h-[150px] overflow-hidden shrink-0 z-10"
+                                className="relative w-full h-[70px]  md:h-[90px] lg:h-[38%] 2xl:h-[42%] overflow-hidden shrink-0 z-10"
                             // style={{
                             //     WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%)',
                             //     maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%)'
