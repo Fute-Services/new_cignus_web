@@ -288,7 +288,7 @@ export default function HomeNew() {
 
             {/* ================= DASHBOARD PHASE CONTENT ================= */}
             <motion.div
-                className="absolute inset-0 z-10 flex flex-col justify-between p-4 md:p-8 overflow-y-scroll lg:overflow-hidden no-scrollbar"
+                className="absolute inset-0 z-10 flex flex-col justify-between p-4 md:p-8 overflow-y-auto no-scrollbar"
                 initial={{ opacity: 0 }}
                 animate={{
                     opacity: phase === 'dashboard' ? 1 : 0,
@@ -383,11 +383,11 @@ export default function HomeNew() {
                     // initial={{ y: 100, opacity: 0 }}
                     // animate={phase === 'dashboard' ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
                     initial={{ y: 100, opacity: 0 }}
-                    animate={phase === 'dashboard' ? { y: -25, opacity: 1 } : { y: 100, opacity: 0 }}
+                    animate={phase === 'dashboard' ? { y: 0, opacity: 1 } : { y: 100, opacity: 0 }}
                     // transition={{ type: "tween", ease: [0.25, 1, 0.5, 1], duration: 0.9 }}
                     // transition={{ type: "tween", ease: [0.25, 1, 0.5, 1], duration: 0.9, delay: 1.0 }}
                     transition={{ type: "tween", ease: [0.25, 1, 0.5, 1], duration: 0.9, delay: phase === 'dashboard' ? 1.0 : 0 }}
-                    className="flex flex-row lg:flex-wrap justify-start lg:justify-center items-stretch gap-4 w-full z-10 overflow-x-auto lg:overflow-x-visible  no-scrollbar my-auto"
+                    className="flex flex-row lg:grid lg:grid-cols-5 justify-start items-stretch gap-4 lg:gap-3 xl:gap-4 w-full max-w-[1400px] lg:mx-auto z-10 overflow-x-auto lg:overflow-x-visible no-scrollbar my-auto lg:px-2"
                 >
                     {portfolioCards.map((card, idx) => (
                         <motion.div
@@ -400,7 +400,7 @@ export default function HomeNew() {
                             //     background: 'linear-gradient(179deg, rgba(255, 255, 255, 0.79) 8.41%, #75BFFF 52.84%)',
                             // }}
                             // className="flex flex-col shrink-0 w-[200px] h-[240px] md:w-[220px] md:h-[260px] lg:w-[240px] lg:h-[280px] rounded-3xl overflow-hidden group backdrop-blur-md relative cursor-pointer border border-white/20 shadow-lg"
-                            className="flex flex-col shrink-0 w-[210px] h-[280px] md:w-[230px] md:h-[310px] lg:w-[225px] lg:h-[310px] 2xl:w-[260px] 2xl:h-[340px] rounded-3xl overflow-hidden group backdrop-blur-md relative cursor-pointer border border-white/20 shadow-lg"
+                            className="flex flex-col shrink-0 w-[210px] h-[280px] md:w-[230px] md:h-[310px] lg:w-full lg:min-w-0 lg:h-[300px] xl:h-[315px] 2xl:h-[340px] rounded-3xl overflow-hidden group backdrop-blur-md relative cursor-pointer border border-white/20 shadow-lg"
                             style={{
                                 background: 'rgba(255, 255, 255, 0.85)',
                             }}
