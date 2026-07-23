@@ -400,7 +400,7 @@ export default function HomeNew() {
                             //     background: 'linear-gradient(179deg, rgba(255, 255, 255, 0.79) 8.41%, #75BFFF 52.84%)',
                             // }}
                             // className="flex flex-col shrink-0 w-[200px] h-[240px] md:w-[220px] md:h-[260px] lg:w-[240px] lg:h-[280px] rounded-3xl overflow-hidden group backdrop-blur-md relative cursor-pointer border border-white/20 shadow-lg"
-                            className="flex flex-col shrink-0 w-[210px] h-[280px] md:w-[230px] md:h-[310px] lg:w-[260px] lg:h-[340px] rounded-3xl overflow-hidden group backdrop-blur-md relative cursor-pointer border border-white/20 shadow-lg"
+                            className="flex flex-col shrink-0 w-[210px] h-[280px] md:w-[230px] md:h-[310px] lg:w-[225px] lg:h-[310px] 2xl:w-[260px] 2xl:h-[340px] rounded-3xl overflow-hidden group backdrop-blur-md relative cursor-pointer border border-white/20 shadow-lg"
                             style={{
                                 background: 'rgba(255, 255, 255, 0.85)',
                             }}
@@ -418,7 +418,7 @@ export default function HomeNew() {
                             />
 
                             <div
-                                className="relative w-full h-[70px]  md:h-[90px] lg:h-[150px] overflow-hidden shrink-0 z-10"
+                                className="relative w-full h-[70px]  md:h-[90px] lg:h-[125px] 2xl:h-[150px] overflow-hidden shrink-0 z-10"
                             // style={{
                             //     WebkitMaskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%)',
                             //     maskImage: 'linear-gradient(to bottom, rgba(0, 0, 0, 1) 75%, rgba(0, 0, 0, 0) 100%)'
@@ -499,6 +499,14 @@ export default function HomeNew() {
                         className="absolute inset-0 z-20 flex flex-col justify-center items-center px-6 text-center select-none overflow-y-auto no-scrollbar"
                         transition={{ duration: 0.9, ease: [0.25, 1, 0.5, 1] }}
                     >
+                        {/* Dark scrim so text stays readable over the bright video */}
+                        <div
+                            className="absolute inset-0 z-0 pointer-events-none"
+                            style={{
+                                background: 'radial-gradient(ellipse at center, rgba(0,10,25,0.55) 0%, rgba(0,10,25,0.35) 55%, rgba(0,10,25,0.15) 100%)',
+                            }}
+                        />
+
                         {/* Ambient Center Glow */}
                         {/* <div
                             className="absolute left-1/2 top-[70%] -translate-x-1/2 -translate-y-1/2 rounded-full pointer-events-none z-0"
@@ -539,8 +547,8 @@ export default function HomeNew() {
                                 initial={{ y: 30, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 1.1, delay: 0.3 }}
-                                className="text-[36px] sm:text-[56px] md:text-[46px] font-extralight tracking-wide leading-tight text-[#3b82f6]"
-                                style={{ fontFamily: 'Outfit, Inter, sans-serif' }}
+                                className="text-[30px] sm:text-[38px] md:text-[46px] font-extralight tracking-wide leading-tight text-[#5b9dff]"
+                                style={{ fontFamily: 'Outfit, Inter, sans-serif', textShadow: '0 2px 14px rgba(0,0,0,0.85)' }}
                             >
                                 Where The Lake Meets
                             </motion.h1>
@@ -549,7 +557,8 @@ export default function HomeNew() {
                                 initial={{ y: 30, opacity: 0 }}
                                 animate={{ y: 0, opacity: 1 }}
                                 transition={{ duration: 1.1, delay: 0.5 }}
-                                className="text-[28px] sm:text-[36px] md:text-[42px] font-bold tracking-wide leading-tight mt-2 boardroom-title text-white"
+                                className="text-[24px] sm:text-[32px] md:text-[42px] font-bold tracking-wide leading-tight mt-2 boardroom-title text-white"
+                                style={{ textShadow: '0 2px 14px rgba(0,0,0,0.85)' }}
                             >
                                 The Boardroom
                             </motion.h1>
@@ -558,12 +567,12 @@ export default function HomeNew() {
                                 initial={{ scale: 0.9, opacity: 0 }}
                                 animate={{ scale: 1, opacity: 1 }}
                                 transition={{ duration: 1.3, delay: 0.8 }}
-                                className="my-8 md:my-11 w-full max-w-[130px] md:max-w-[180px]"
+                                className="my-6 md:my-9 w-full max-w-[120px] md:max-w-[165px]"
                             >
                                 <img
                                     src={leftLogo}
                                     alt="Cignus Powai"
-                                    className="w-full h-auto object-contain"
+                                    className="w-full h-auto object-contain drop-shadow-[0_2px_12px_rgba(0,0,0,0.8)]"
                                 />
                             </motion.div>
 
