@@ -1,7 +1,7 @@
 import logo from '../../assets/Home/cignus updated logo.png';
 import logo2 from '../../assets/Home/K_Raheja_Corp 1.png'
-import bgVedio from '../../assets/overview/overview.mp4';
-import image from '../../assets/overview/overview.png';
+import bgVedio from '../../assets/Overview/overview.mp4';
+import image from '../../assets/Overview/overview.png';
 import { motion } from 'framer-motion';
 import { AnimatePresence } from 'framer-motion';
 import { HiOutlineArrowSmLeft, HiOutlineArrowSmRight } from "react-icons/hi";
